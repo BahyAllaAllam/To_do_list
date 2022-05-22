@@ -1,10 +1,15 @@
 {% extends "base.html" %}
 
 {% block body %}
+<div class="w3-container w3-mobile">
     <h1>To Do List</h1>
-    <ol>
-        {% for task in tasks_list %}
-            <li>{{ task }}</li>
-        {% endfor %}
-    </ol>
+    <div class="w3-container">
+        <ol>
+            {% for task in tasks_list %}
+                <li>{{ task }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+</div>
+
 {% endblock body %}

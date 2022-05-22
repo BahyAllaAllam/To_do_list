@@ -1,18 +1,17 @@
 {% extends "base.html" %}
 
 {% block body %}
-
+<div class="w3-container w3-mobile">
     <h1>Add Task</h1>
     <form>
         <div class="w3-container">
             <div style= "margin-bottom: 1rem;">
                 <input class="w3-border w3-round-large w3-mobile"  type="text" name="task" placeholder="type here.." >
-                <input class="w3-button w3-black w3-round-large w3-mobile m-1" type="submit" >
+                <input class="w3-button w3-black w3-round-large w3-mobile m-2" type="submit" >
             </div>
-            <div class="input-submit" id="submit">
-
             </div>
-        </div>
     </form>
+</div>
+
 
 {% endblock body %}
