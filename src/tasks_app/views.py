@@ -9,3 +9,6 @@ def home(request):
     return render(request, 'tasks_app/home.html', {
         "tasks_list":tasks_list
     })
+
+def add(request):
+    return render(request, "tasks_app/add.html")
