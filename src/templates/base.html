@@ -19,10 +19,18 @@
 <body>
     <nav class="w3-bar w3-black">
         <div class="container">
-          <a class="w3-bar-item w3-button w3-mobile" href="{% url 'home' %}">Home</a>
-          <a class="w3-bar-item w3-button w3-mobile" href="{% url 'add' %}">Add Task</a>
+          <a class="w3-bar-item w3-button w3-mobile" href="{% url 'tasks_app:home' %}">Home</a>
+          <a class="w3-bar-item w3-button w3-mobile" href="{% url 'tasks_app:add' %}">Add Task</a>
         </div>
     </nav>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="w3-panel w3-round-xxlarge text-center">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
     {% block body %}
     {% endblock body %}
 </body>

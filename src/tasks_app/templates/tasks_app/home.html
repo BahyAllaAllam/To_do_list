@@ -7,6 +7,8 @@
         <ol>
             {% for task in tasks_list %}
                 <li>{{ task }}</li>
+            {% empty %}
+                <h2>No Tasks yet.</h2>
             {% endfor %}
         </ol>
     </div>
