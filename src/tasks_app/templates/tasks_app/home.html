@@ -12,6 +12,11 @@
             {% endfor %}
         </ol>
     </div>
+    <div class="w3-container">
+        <a class="w3-button w3-black w3-round-large w3-mobile" href="{% url 'tasks_app:delete' %}">
+            Delete The List
+        </a>
+    </div>
 </div>
 
 {% endblock body %}

@@ -5,8 +5,7 @@ from django.urls import reverse
 from django.contrib import messages
 # Create your views here.
 
-# tasks_list = ["foo", "bar", "baz"]
-
+## Display the list
 def home(request):
     if "tasks_list" not in request.session:
         request.session["tasks_list"]= []
@@ -15,6 +14,7 @@ def home(request):
         "tasks_list":request.session["tasks_list"]
     })
 
+## Add Tasks to the list
 def add(request):
     if request.method == 'POST':
         form = NewTaskForm(request.POST)
@@ -29,3 +29,25 @@ def add(request):
     return render(request, "tasks_app/add.html", {
         "form": form
     })
+
+## Delete the list
+def delete(request):
+    if request.session["tasks_list"] != []:
+        del request.session["tasks_list"]
+        messages.success(request, "The list has been deleted successfully!")
+    else:
+        messages.info(request, "The list is already empty")
+    return redirect('tasks_app:home')
+
+## Testing the browser
+def cookie_session(request):
+    request.session.set_test_cookie()
+    return HttpResponse("<h1>dataflair</h1>")
+
+def cookie_delete(request):
+    if request.session.test_cookie_worked():
+        request.session.delete_test_cookie()
+        response = HttpResponse("dataflair<br> cookie createed")
+    else:
+        response = HttpResponse("Dataflair <br> Your browser doesnot accept cookies")
+    return response
