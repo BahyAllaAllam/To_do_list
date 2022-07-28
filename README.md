@@ -13,3 +13,6 @@ can delete them at any time by just clicking the Delete button.
 * Form containing one input to add the tasks. 
 
 3- **Flash messages when adding the tasks and deleteing them**
+
+### How to Install and Run the Project
+* Clone the code and install the req.txt file
