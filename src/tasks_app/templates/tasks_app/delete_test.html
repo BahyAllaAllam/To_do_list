@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="w3-container w3-mobile">
+    <div class="w3-container">
+        {% if response %}
+        <h1>Your browser is accepting cookies</h1>
+        {% else %}
+        <h1>Your browser doesnot accept cookies</h1>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock body %}

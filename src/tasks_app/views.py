@@ -42,12 +42,13 @@ def delete(request):
 ## Testing the browser
 def cookie_session(request):
     request.session.set_test_cookie()
-    return HttpResponse("<h1>dataflair</h1>")
+    return render(request, "tasks_app/test.html")
 
 def cookie_delete(request):
     if request.session.test_cookie_worked():
         request.session.delete_test_cookie()
-        response = HttpResponse("dataflair<br> cookie createed")
+        response = True
     else:
-        response = HttpResponse("Dataflair <br> Your browser doesnot accept cookies")
-    return response
+        response = False
+
+    return render(request, "tasks_app/delete_test.html", {'response':response})
