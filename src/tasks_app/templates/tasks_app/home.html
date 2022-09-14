@@ -1,22 +1,42 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--W3 CSS-->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-{% block body %}
-<div class="w3-container w3-mobile">
-    <h1>To Do List</h1>
-    <div class="w3-container">
-        <ol>
-            {% for task in tasks_list %}
-                <li>{{ task }}</li>
-            {% empty %}
-                <h2>No Tasks yet.</h2>
-            {% endfor %}
-        </ol>
-    </div>
-    <div class="w3-container">
-        <a class="w3-button w3-black w3-round-large w3-mobile" href="{% url 'tasks_app:delete' %}">
-            Delete The List
-        </a>
-    </div>
-</div>
-
-{% endblock body %}
+        <title>To_Do_List</title>
+    </head>
+    <body>
+        <div class="w3-container w3-mobile">
+            <h1>To Do List</h1>
+            <div class="w3-container">
+                <ol>
+                    {% for task in tasks_list %}
+                        <li>{{ task }}</li>
+                    {% empty %}
+                        <h2>No Tasks yet.</h2>
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="w3-container">
+                <a class="w3-button w3-black w3-round-large w3-mobile" href="{% url 'tasks_app:delete' %}">
+                    Delete List
+                </a>
+            </div>
+            <h1>Add Task</h1>
+            <form action="{% url 'tasks_app:home' %}" method="post">
+                {% csrf_token %}
+                <div class="w3-container">
+                    <div style= "margin-bottom: 1rem;">
+                        {{ form }}
+                        <input class="w3-button w3-black w3-round-large w3-mobile m-2" type="submit">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
