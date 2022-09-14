@@ -3,8 +3,7 @@
 ## Project Description
 * This is the code repository for making to_do_list project using Django framework 
 the data stored in a session on a cookie the session has limited time, but you
-can delete them at any time by just clicking the Delete button and the ability to test your
-browser if it is accepting cookies or not.
+can delete them at any time by just clicking the Delete button.
 
 ## Project Components
 1- **Home Page**
