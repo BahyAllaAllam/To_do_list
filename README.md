@@ -7,16 +7,10 @@ can delete them at any time by just clicking the Delete button and the ability t
 browser if it is accepting cookies or not.
 
 ## Project Components
-1- **Home button**
-* Listing all the tasks and the Delete button. 
-
-2- **Add Task Page**
-* Form containing one input to add the tasks.
-
-3- **Test Browser Cookies**
-* By making one and delete it to check if the browser is accepting cookies or not.
-
-3- **Flash messages when adding the tasks and deleting them**
+1- **Home Page**
+* Listing all the tasks.
+* Delete the tasks.
+* Form to add the tasks.
 
 ### How to Install and Run the Project
-* Clone the code and install the req.txt file
+* Clone the code and install the req.txt file.
